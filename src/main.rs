@@ -16,6 +16,6 @@ async fn main() {
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:4000").await.unwrap();
     clearscreen::clear().unwrap();
-    println!("Server running in localhost:3000");
+    println!("Server running in localhost:4000");
     axum::serve(listener, app).await.unwrap();
 }
