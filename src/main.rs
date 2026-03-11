@@ -2,9 +2,9 @@ use axum::{
      Router, routing::get
 };
 
-mod controller;
-mod service;
-use controller::image_controller;
+mod controllers;
+mod services;
+use controllers::image_controller;
 
 #[tokio::main]
 async fn main() {

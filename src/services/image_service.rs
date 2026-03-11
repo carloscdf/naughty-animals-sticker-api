@@ -14,11 +14,11 @@ pub async fn img_response(image_resource:&String) -> Response{
     let mut img_bytes:Vec<u8> = Vec::new();
     
     image_resource.write_to(&mut std::io::Cursor::new(&mut img_bytes),
-    image::ImageFormat::Png).expect("Can't parse image");
+    image::ImageFormat::Jpeg).expect("Can't parse image");
 
     println!("Showing image");
 
-    ([(header::CONTENT_TYPE, "image/png")], img_bytes).into_response()
+    ([(header::CONTENT_TYPE, "image/jpeg")], img_bytes).into_response()
 }
 
 pub async fn count_folder_imgs() -> i32 {
